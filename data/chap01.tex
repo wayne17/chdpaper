@@ -1,0 +1,166 @@
+% !Mode:: "TeX:UTF-8"
+\chapter{引言}
+\mingyan{满纸荒唐言，一把辛酸泪！都云作者痴，谁解其中味？}{曹雪芹}
+
+本模板完全由国防科技大学的模板改来，初次制作，不足之处在所难免，欢迎提供建议，在此感谢Liubenyuan同学，模板里很多地方对我帮助很大。模板详细说明基本上可以参考nudtpaper-2.2.pdf。
+
+我还是比较满意我做的两个封面\footnote{论文封面和任务书封面}，你只需在thesis.tex中仿照模板填上相关数据即可。由于我们学校的论文要求里面也没说正文版面大小，我就根据以前一个学姐的论文测量出页边距，页眉，页脚等一些参数，做的这个。算是基本满足学校的要求了，就看学校收不收了。
+\section{本模板的一些使用说明}
+任务书及开题报告本来是不想做的，有些难度。但真是皇天不负有心人，终于让我在天津大学的模板里找到了这个东西，花了一个下午做出了那些表格。当然你也可以不用我做的那个，将\verb|\include{data/task}|注释掉。再在word里填好，然后转换为pdf,存储名为frontpage.pdf,放到a3paper文件夹下。并在thesis.tex中找到这句\verb|\includepdf[nup=|\verb|1x1, delta=0mm 0mm,scale=1,pages={1-6}]{a3cover/frontpage.pdf}|,其中\verb|pages={1-6}|是你frontpage的页码范围。还有附件里的外文文献及翻译，也是用这种方法载入。还有\LaTeX{}分段缩进不用空格，直接回车两下，就是空一行
+
+像这样，详细参考本文代码。公式、插图、表格下面段落也要空一行，否则不会缩进。但是如果遇见章节标题，就不用空行了，会自动缩进。
+\subsection{免责声明}
+\begin{myList}
+\item 本模板的发布遵守\LaTeX{} Project Public License，使用前请认真阅读协议内容
+\item 本模板的出发点是方便大家使用专业的高效的论文书写工具，其优点在于注重排版质量、命令规范、使用方便，符合论文撰写说明。但任何由于使用本模板而引起的论文格式审查问题均与本模板作者无关。
+\item 任何个人或组织均可以本模板为基础进行修改、扩展，生成新的专用模板，但
+请严格遵守\LaTeX{} Project Public License 协议
+\end{myList}
+\begin{figure}[htp]
+\centering
+\includegraphics[width=5in]{soroban.pdf}
+\caption{soroban宏包绘制的算盘}
+\end{figure}
+
+由于有些地方用\verb|itemize|不太合适，也用不上\verb|\subsubsection|这样的小小节，所以就把它改成下面的样子了。但是在每次使用前得先把计数器初始化为1，\verb|\setcounter|\verb|{shuzi}{1}|
+\subsubsection{（题目(1)）}
+本章的主要内容与学校提供的Word模板中内容一致，图片与表格均采用原始设定大小，%
+主要是为了说明格式的统一。%
+但是，\LaTeX{}的一些禁则，专业排版的能力，对公式及文献的处理都是得天独厚的，%
+我们不必刻意去追求与Word的完美匹配。而且你将会发现，用\LaTeX{}书写论文的美！ %
+
+\subsubsection{（题目(1)）}
+用户在使用中遇到问题或者需要增加某种功能，都可以和作者联系：
+Tsingber Lee <xiaolee2520@gmail.com>
+欢迎大家反馈自己的使用情况，能为长大本科生的作出一点点的贡献，也祝
+长安大学的同学前程似锦。
+
+\subsection{（1.1.2 题目）}
+正文内容
+
+正文内容
+\begin{figure}[htp]
+\centering
+\includegraphics{followline.pdf}
+\caption{followline}
+\end{figure}
+
+\begin{figure}[htp]
+\centering
+\includegraphics{shiliu.jpg}
+\caption{世园会吉祥物}
+\end{figure}
+
+\section{1.2节题目}
+正文内容
+
+正文内容
+
+\begin{table}[htp]
+\centering
+\caption{表 1.2 名称}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\makebox[2.07cm][0pt]{} & \makebox[2.07cm][0pt]{} & \makebox[2.07cm][0pt]{} & \makebox[2.07cm][0pt]{} & \makebox[2.07cm][0pt]{} \\
+\hline
+ & & & & \\
+\hline
+ & & & & \\
+\hline
+\end{tabular}
+\end{table}
+\subsection{题目}
+\begin{figure}[htp]
+\centering
+\includegraphics[width=5in]{pstricks-doc1.pdf}
+\caption{空间立体}
+\end{figure}
+\subsection{题目}
+正文内容
+
+正文内容
+
+\section{本文主要研究内容}
+\begin{figure}[htp]
+\centering
+\includegraphics[width=5in]{pst-am-doc.pdf}
+\caption{电路图}
+\end{figure}
+
+正文内容
+\begin{figure}[htp]
+\centering
+\includegraphics[width=4in]{pst-loglines.pdf}
+\caption{对数坐标，在物理实验时可以用到}
+\end{figure}
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=4in]{graph.pdf}
+\caption{二维坐标}
+\end{figure}
+\begin{figure}[htp]
+\centering
+\includegraphics[width=4in]{pst-math-doc.pdf}
+\caption{多个函数}
+\end{figure}
+\subsection{有意思的绘图宏包}
+正文内容
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=3in]{pstricks-chemical.pdf}
+\caption{pstricks宏包绘制的化学实验}
+\end{figure}
+
+\subsection{（1.3.2 题目）}
+正文内容
+
+正文内容
+
+\begin{table}[H]
+\centering
+\caption{表 1.2 名称}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\makebox[2.07cm][0pt]{} & \makebox[2.07cm][0pt]{} & \makebox[2.07cm][0pt]{} & \makebox[2.07cm][0pt]{} & \makebox[2.07cm][0pt]{} \\
+\hline
+ & & & & \\
+\hline
+ & & & & \\
+\hline
+\end{tabular}
+\end{table}
+%htbp选项用来指定插图的理想位置，这几个字母分别代表here,top,bottom,float page,也就是就这里、页顶、页尾、浮动页（专门放浮动环境的单独页面）。我们可以使用这几个字母的任意组合，四个字母都写上表示放哪里都无所谓；一般不推荐单独使用h，因为latex自以为它的排版算法是最完美的，不愿意被束缚手脚。
+\begin{figure}[htb]
+\centering
+\includegraphics{lnotes2.pdf}
+\end{figure}
+本模版是根据长安大学毕业论文格式规范制作的\LaTeX{}毕业论文模
+板。
+本模板是基于国防科技大学的硕博士论文模板，并
+按照长安大学毕业论文格式规范开发的\LaTeX{}论文模板，经过完善和修改，目
+前已经基本满足了论文规范的要求，而且易用性良好，功能强大。不过，可能还存在着
+一些问题，欢迎大家积极使用本模版，反馈遇到的问题，以便不断对其进行改进。
+当然这个模板仅仅是一个开始，希望有更多的\TeX{er}能够参与进来，不断改进准确性、
+易用性和较好的可维护性，造福需要的兄弟姐妹们。总体上来说，当前这个模板还是很
+值得推荐使用的。
+
+本模板的目的旨在推广\LaTeX{}这一优秀的排版软件在长大（尤其是数学相关专业）
+的应用，为广大同学提供一个方便、美观的论文模板，减少论文撰写格式方面的麻烦。
+
+\bigskip
+Q: ``If you were young again, would you start writing \TeX{} again or would you
+use Microsoft Word, or another word processor?"
+
+A: ``I hope to die before I have to use Microsoft Word."
+
+\medskip\hfill Harald K\"{o}nig asking Donald Knuth, T\"{u}bingen, 2 Oct 2001.
+\begin{figure}[htp]
+\centering
+\includegraphics{fuhao.pdf}
+\caption{無法直接在\LaTeX{}文稿裏使用的符號字元}
+\label{fig:symble}
+\end{figure}
+
+图 \ref{fig:symble}的表格列出无法直接在\LaTeX{}文档中使用的符号\footnote{截图自\kai 元智大學光電工程研究所碩士論文}

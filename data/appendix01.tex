@@ -1,0 +1,73 @@
+% TeX
+%\chapter{部分仿真程序}
+\chapter{部分仿真程序}\label{ch:fz}
+\lstset{% general command to set parameter(s)
+basicstyle=\ttfamily\small, % print whole listing small
+keywordstyle=\color{black}\bfseries,
+% \underbar underlined bold black keywords
+identifierstyle=, % nothing happens
+commentstyle=\color{black}, % white comments
+%stringstyle=\ttfamily, % typewriter type for strings
+showstringspaces=false, % no special string spaces
+stepnumber=2}
+\begin{lstlisting}[language=Matlab,caption={最小二乘法获取系统传递函数}]
+%%
+% 输入参数：
+% x  ---  系统输入阵列
+% y  ---  系统输出阵列
+% N  ---  系统传递函数的阶数
+% 函数输出：
+% 系统 Z 传递函数分子与分母的系数，即： h(z) = numd(z) / dend(z)
+
+%%
+
+function [numd, dend] = LeastSquare(x, y, N)
+count = length(y);
+M = count - 1;
+ai = zeros(N*2, M);
+for i=1:N
+    ai(i, i:M) = x(1:(count-i));
+    ai(i+N, i:M) = -y(1:(count-i));
+end
+bi = y(2:(count));
+xd = (inv(ai*ai')*ai*bi)';
+numd = [0 xd(1:N)];
+dend = [1 xd(N+1: N+N)];
+\end{lstlisting}
+\begin{lstlisting}[language=Matlab,caption={拥有精确模型的卡尔曼滤波}]
+clc
+clear
+close all
+
+Ts = 1;               %采样时间
+s = tf('s');
+sysc = 100/(60*s +1);   %真实系统的传递函数
+sysd = c2d(sysc, Ts);
+
+t = 0:Ts:(Ts*300);
+u = ones(1, length(t));   %系统输入
+ys = lsim(sysd, u, t, 0); %系统输出
+ys = ys + 10*rand(size(ys)); %测量量 = 系统输出 + 噪声
+
+%% 就是这个地方在基于新息的那篇论文里用的函数
+[numd, dend] = LeastSquare(u, ys, 3);   %% 最小二乘法获取预测系统模型
+[A, B, C, D] = tf2ss(numd, dend);       % 变换到状态空间形式
+Len = length(u);
+N = length(A);        % 系统维数
+
+yout = zeros(Len, 1);  %滤波器输出
+Xh = zeros(N, 1);      %状态变量
+P = eye(N);
+Q = 0.02 * eye(N);     %系统噪声
+R = 50;                %测量噪声
+for i = 1 : Len
+    Xh = A*Xh + B*u(i);
+    P = A*P*A' + Q;
+    K = P*C'* inv(C*P*C' + R);
+    Xh = Xh + K*(ys(i) - C*Xh);
+    P = P - K*C*P;
+    yout(i) = C*Xh;
+end
+
+plot(t, ys, t, yout);
+\end{lstlisting}

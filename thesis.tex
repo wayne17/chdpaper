@@ -1,0 +1,89 @@
+% !Mode:: "TeX:UTF-8"
+%%
+%% This is file `thesis.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% chdupaper.dtx  (with options: `thesis')
+%%
+%% This is a generated file.
+%%
+%% Copyright (C) 2013 by Tsingber Lee <xiaolee2520@gmail.com>
+%%
+%% This file may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.0
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in:
+%%
+%% http://www.latex-project.org/lppl.txt
+%%
+%% and version 1.3a or later is part of all distributions of LaTeX
+%% version 2004/10/01 or later.
+%%
+%% To produce the documentation run the original source files ending with `.dtx'
+%% through LaTeX.
+%%
+%% Any Suggestions : Tsingber Lee <xiaolee2520@gmail.com>
+%% Thanks LiuBenYuan <liubenyuan@gmail.com> for the NUDT paper!
+%%
+%3. 如果使用是Vista
+% \documentclass[bachelor,ttf,vista]{chdpaper}
+%4. 建议使用OTF字体获得较好的页面显示效果
+%   OTF字体从网上获得，各个系统名称统一，不用加vista选项
+%   如果你下载的是最新的(1201)OTF英文字体，建议修改chdupaper.cls，使用
+%   Times New Roman PS Std,但是在该版本中参考文献目标引用会出现问题
+%5. 如果想生成盲评，传递anon即可，仍需修改个人成果部分
+% \documentclass[bachelor,otf,anon]{chdpaper}
+%
+\documentclass[bachelor,otf,showtypeinfo,thesis]{chdpaper}%不要模板信息页，可以去掉showtypeinfo选项
+%%draftt只加水印，而draft不插图和代码，没有超链接，没有书签
+\usepackage{mychd}
+\title{Chdpaper宏包XeLaTeX模板使用手册}{\Chdpaper{}宏包\XeLaTeX{}模板使用手册}%论文题目
+\school{信息工程学院}%学院
+\subject{电子信息工程}%专业
+\author{Tsingber Lee}%作者
+\Class{24000900}%班级
+\serialno{2400090001}%学号
+\supervisor{$\mathbb{C}$\TeX{}}
+\endate{\entoday}%可以手动填写日期
+\zhdate{\zhtoday}
+%%任务开始结束日期
+\tbmonth{3}%月
+\tbday{1}%日至
+\temonth{6}%月
+\teday{10}%日共
+\totalweeks{15}%周
+\begin{document}
+\graphicspath{{figures/}}%图片路径
+% 制作封面，任务书及开题报告，生成目录，插入摘要
+\maketitle%注释掉此行，可以不生成此封面,任务书及开题报告。一起由word转为pdf,由下面载入
+%\includepdf[nup=1x1, delta=0mm 0mm,scale=1,pages={1-5}]{a3cover/frontpage.pdf}
+%
+\frontmatter
+\input{data/abstract}%中英文摘要
+\pdfbookmark[0]{目~~录}{mulu}
+\tableofcontents%目录
+%书写正文，可以根据需要增添章节; 正文还包括致谢，参考文献与成果
+\mainmatter
+\input{data/chap01}%第一章
+\input{data/chap02}%第二章
+\input{data/conclusion}%结论以及展望
+\input{data/thanks}%致谢
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{参考文献}
+\bibliographystyle{gbt-7714-2015-numerical}
+\bibliography{ref/refs}%参考文献
+
+% 最后，需要的话还要生成附录，全文随之结束。
+
+\appendix
+\backmatter%附录
+\input{data/appendix01}%部分仿真程序
+\input{data/appendix02}%过长的公式推导
+\bbackmatter%附件
+\input{data/annex02}%外文文献
+\input{data/annex03}%外文文献翻译
+\end{document}

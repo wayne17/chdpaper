@@ -1,0 +1,49 @@
+% TeX
+%\chapter{部分仿真程序}
+\chapter{BSDE的$L^1$解的存在唯一性}\label{cha:FiniteTimeInterval}
+在本节中, 我们考虑如下一维倒向随机微分方程:
+\begin{equation}\label{eq:BSDEsInFiniteTimeInterval}
+  y_t=\xi+\int^T{t} g(s,y_s,z_s)\,\mathrm{d}s-\int^T{t}z_s\cdot\,\mathrm{d}B_s,\quad t\in T,
+\end{equation}
+
+其中$\xi$在$\mathbf{R}$中取值;$T$有限,即$0\leq T<+\infty$;生成元$g$定义如下
+\[g(\omega,t,y,z):\Omega\times T\times\mathbf{R}\times\mathbf{R}^d\mapsto \mathbf{R},\]
+
+且对任意的$(y,z)\in\mathbf{R}\times\mathbf{R}^d$, $g(\cdot,\cdot,y,z)$为
+$(\mathscr{F}_t)$-循序可测的随机函数. 即在本节中,我们总假定$k=1$.
+
+\begin{definition}[谱半径]\label{def:def1}
+称$n$阶方阵$\mathbf{A}$的全体特征值
+$\lambda_1,\cdots,\lambda_n$组成的集合为$\mathbf{A}$的谱，称
+$$\rho(\mathbf{A})=\max{\{|\lambda_1|,\cdots,|\lambda_n|\}}$$
+\end{definition}
+\begin{theorem}[相似充要条件]\label{lemma:l1}
+方阵$A$和$B$相似的充要条件是：$A$和$B$有全同的不变因子。
+\end{theorem}
+\begin{corollary}[推论1]\label{cor:cor1}
+在赋范空间$(X,\|\cdot\|)$上定义$d(x,y)=\|x-y\|$,
+对任意$x,y\in X$,则$(X,d)$是距离空间。
+\end{corollary}
+\begin{proof}
+只需证明$d(x,y)$是距离。
+\end{proof}
+\begin{theorem}
+  \label{chapTSthm:rayleigh solution}
+  假定 $X$ 的二阶矩存在:
+  \begin{equation}
+         O_R(\mathbf{x},F)=\sqrt{\frac{\mathbf{u}_1^T\mathbf{A}\mathbf{u}_1} {\mathbf{u}_1^T\mathbf{B}\mathbf{u}_1}}=\sqrt{\lambda_1},
+  \end{equation}
+  其中 $\mathbf{A}$ 等于 $(\mathbf{x}-EX)(\mathbf{x}-EX)^T$，$\mathbf{B}$ 表示协方差阵 $E(X-EX)(X-EX)^T$，$\lambda_1$
+$\mathbf{u}_1$是$\lambda_1$对应的特征向量，
+\end{theorem}
+\begin{proof}
+上述优化问题显然是一个Rayleigh商问题。我们有
+  \begin{align}
+     O_R(\mathbf{x},F)=\sqrt{\frac{\mathbf{u}_1^T\mathbf{A}\mathbf{u}_1} {\mathbf{u}_1^T\mathbf{B}\mathbf{u}_1}}=\sqrt{\lambda_1},
+ \end{align}
+ 其中 $\lambda_1$ 下列广义特征值问题的最大特征值：
+$$
+\mathbf{A}\mathbf{z}=\lambda\mathbf{B}\mathbf{z}, \mathbf{z}\neq 0.
+$$
+ $\mathbf{u}_1$ 是 $\lambda_1$对应的特征向量。结论成立。
+\end{proof}
