@@ -73,6 +73,7 @@
 \RequirePackage{tabularx}
 \RequirePackage{rotating}
 \RequirePackage{slashbox}
+\RequirePackage{diagbox}
 \RequirePackage{mathrsfs}%花体数学字体
 \RequirePackage[neverdecrease]{paralist}
 \RequirePackage{xcolor}
@@ -84,7 +85,8 @@
 \RequirePackage{pageslts}%计算总页数，设置页脚
 \RequirePackage[amsmath,thmmarks,hyperref]{ntheorem}
 \RequirePackage{nicefrac}
-\RequirePackage[CJKchecksingle,no-math]{xeCJK}
+\RequirePackage[SlantFont,CJKchecksingle,no-math]{xeCJK}
+\xeCJKsetslantfactor{0.17}
 \RequirePackage{zhnumber}
 \RequirePackage{indentfirst}
 %修改正文参考文献引用中括号[]为中文的【】,并在natbib.sty中新定义其为csquare，并保存其为UTF-8格式
@@ -120,9 +122,9 @@
 \setmainfont{Times New Roman} % could be changed to "TeXGyrePagella"or "Times New Roman PS Std"
   \setsansfont{Arial}
   \setmonofont{Consolas}
-  \setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{Adobe Song Std}
+  \setCJKmainfont[BoldFont={Adobe Heiti Std}]{Adobe Song Std}
   \setCJKsansfont{Adobe Heiti Std}
-  \setCJKmonofont{Adobe Kaiti Std}
+  \setCJKmonofont{SimHei}
   \setCJKfamilyfont{song}{Adobe Song Std}
   \setCJKfamilyfont{hei}{Adobe Heiti Std}
   \setCJKfamilyfont{fs}{Adobe Fangsong Std}

@@ -73,10 +73,9 @@ Mac OS & MacTeX & TeXShop \\
       {\hei 文件名} & {\hei 描述} \\
       \midrule[1pt]
       thesis.tex & 主文档\footnote{表格中的脚注} \\
-      doc文件夹 & \LaTeX{}学习文档\footnote{再来一个}。\\
       chdpaper.cls & 模板类文件。\\
       chdpaper.cfg & 模板配置文。\\
-      bstutf8.bst   & 参考文献 Bibtex 样式文件。\\
+      gbt-7714-2015-numerical.bst   & 参考文献 Bibtex 样式文件。\\
       mychd.sty    & 常用的包和命令写在这里，减轻主文件的负担。\\
       figures文件夹 & 存放图片文件\\
       ref文件夹 & 存放参考文献\\
@@ -353,10 +352,10 @@ jPicEdt 等等。本人强烈推荐\textsf{Ipe}。
   \centering%
   \subfloat[第一个小图形]{%
     \label{fig:subfig1}
-    \includegraphics[height=2cm]{chdlogo.eps}}\hspace{4em}%
+    \includegraphics[height=2cm]{chdblacklogo.pdf}}\hspace{4em}%
   \subfloat[第二个小图形。如果标题很长的话，它会自动换行，这个 caption 就是这样的例子]{%
     \label{fig:subfig2}
-    \includegraphics[height=2cm]{chdname.eps}}
+    \includegraphics[height=2cm]{chdname.pdf}}
   \caption{包含子图形的大图形}
   \label{fig:big1}
 \end{figure}
@@ -384,13 +383,13 @@ jPicEdt 等等。本人强烈推荐\textsf{Ipe}。
 \begin{figure}[htb]
 \begin{minipage}{0.48\textwidth}
   \centering
-  \includegraphics[height=1.2cm]{chdname.eps}
+  \includegraphics[height=1.2cm]{chdname.pdf}
   \caption{并排第一个图}
   \label{fig:parallel1}
 \end{minipage}\hfill
 \begin{minipage}{0.48\textwidth}
   \centering
-  \includegraphics[height=1.2cm]{chdname.eps}
+  \includegraphics[height=1.2cm]{chdname.pdf}
   \caption{并排第二个图}
   \label{fig:parallel2}
 \end{minipage}
@@ -635,7 +634,8 @@ void sort(int arr[], int beg, int end)
 当我们需要高亮Java代码，不需要行号，不需要边框时，可以：
 \begin{lstlisting}[language=Java,numbers=none,frame=none]
 // A program to display the message
-// "Hello World!" on standard output
+// "Hello World!" on standard output 这是中文
+// 这是中文 a+b=c
 
 public class HelloWorld {
 
