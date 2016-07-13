@@ -76,7 +76,10 @@
 \RequirePackage{diagbox}
 \RequirePackage{mathrsfs}%花体数学字体
 \RequirePackage[neverdecrease]{paralist}
-\RequirePackage{xcolor}
+%\RequirePackage{xcolor}
+\RequirePackage[minted]{tcolorbox}
+\RequirePackage{varwidth}
+\tcbuselibrary{skins, listings, xparse, breakable}
 \RequirePackage{amsmath,amssymb}
 %\RequirePackage{txfonts}
 \RequirePackage[Symbolsmallscale]{upgreek}

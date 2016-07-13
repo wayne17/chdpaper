@@ -31,3 +31,8 @@
 *.xdy
 *.tdo
 thesis.pdf
+_minted-thesis
+fonts.txt
+*.listing
+*.thm
+*.synctex

@@ -1,17 +1,7 @@
 % TeX
 %\chapter{部分仿真程序}
 \chapter{部分仿真程序}\label{ch:fz}
-\lstset{% general command to set parameter(s)
-basicstyle=\ttfamily\small, % print whole listing small
-%keywordstyle=\color{black}\bfseries,
-% \underbar underlined bold black keywords
-identifierstyle=, % nothing happens
-breaklins=true,
-commentstyle=\itshape\color{gray},
-%stringstyle=\ttfamily, % typewriter type for strings
-showstringspaces=false, % no special string spaces
-stepnumber=2}
-\begin{lstlisting}[language=Matlab,caption={最小二乘法获取系统传递函数}]
+\begin{mycode}{matlab}{最小二乘法获取系统传递函数}
 %%
 % 输入参数：
 % x  ---  系统输入阵列
@@ -34,8 +24,8 @@ bi = y(2:(count));
 xd = (inv(ai*ai')*ai*bi)';
 numd = [0 xd(1:N)];
 dend = [1 xd(N+1: N+N)];
-\end{lstlisting}
-\begin{lstlisting}[language=Matlab,caption={拥有精确模型的卡尔曼滤波}]
+\end{mycode}
+\begin{mycode}{matlab}{拥有精确模型的卡尔曼滤波}
 clc
 clear
 close all
@@ -71,4 +61,27 @@ for i = 1 : Len
 end
 
 plot(t, ys, t, yout);
-\end{lstlisting}
+\end{mycode}
+\begin{mycode}{java}{Java示例}
+package win7.xiao;
+	
+public class duotai {
+		
+  public static void main(String[] args) {
+    // TODO Auto-generated method stub
+    /*Cat cat=new Cat();
+      cat.cry();
+      Dog dog=new Dog();*/
+			
+    /*Animal an=new Cat();
+      an.cry();
+      an=new Dog();
+      an.cry();*/
+			
+    Master master=new Master();
+    master.feed(new Dog(), new Bone());
+    master.feed(new Cat(), new Fish());
+      }
+		
+  }
+\end{mycode}
