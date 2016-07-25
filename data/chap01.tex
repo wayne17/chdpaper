@@ -6,7 +6,7 @@
 
 我还是比较满意我做的两个封面\footnote{论文封面和任务书封面}，你只需在thesis.tex中仿照模板填上相关数据即可。由于我们学校的论文要求里面也没说正文版面大小，我就根据以前一个学姐的论文测量出页边距，页眉，页脚等一些参数，做的这个。算是基本满足学校的要求了，就看学校收不收了。
 \section{本模板的一些使用说明}
-任务书及开题报告本来是不想做的，有些难度。但真是皇天不负有心人，终于让我在天津大学的模板里找到了这个东西，花了一个下午做出了那些表格。当然你也可以不用我做的那个，将\verb|\include{data/task}|注释掉。再在word里填好，然后转换为pdf,存储名为frontpage.pdf,放到a3paper文件夹下。并在thesis.tex中找到这句\verb|\includepdf[nup=|\verb|1x1, delta=0mm 0mm,scale=1,pages={1-6}]{a3cover/frontpage.pdf}|,其中\verb|pages={1-6}|是你frontpage的页码范围。还有附件里的外文文献及翻译，也是用这种方法载入。还有\LaTeX{}分段缩进不用空格，直接回车两下，就是空一行
+任务书及开题报告本来是不想做的，有些难度。但真是皇天不负有心人，终于让我在天津大学的模板里找到了这个东西，花了一个下午做出了那些表格。当然你也可以不用我做的那个，将\latexinline|\include{data/task}|注释掉。再在word里填好，然后转换为pdf,存储名为frontpage.pdf,放到a3paper文件夹下。并在thesis.tex中找到这句\mint[breakanywhere]{latex}|\includepdf[nup=1x1, delta=0mm 0mm,scale=1,pages={1-6}]{a3cover/frontpage.pdf}|,其中\latexinline|pages={1-6}|是你frontpage的页码范围。还有附件里的外文文献及翻译，也是用这种方法载入。还有\LaTeX{}分段缩进不用空格，直接回车两下，就是空一行
 
 像这样，详细参考本文代码。公式、插图、表格下面段落也要空一行，否则不会缩进。但是如果遇见章节标题，就不用空行了，会自动缩进。
 \subsection{免责声明}
@@ -22,7 +22,7 @@
 \caption{soroban宏包绘制的算盘}
 \end{figure}
 
-由于有些地方用\verb|itemize|不太合适，也用不上\verb|\subsubsection|这样的小小节，所以就把它改成下面的样子了。但是在每次使用前得先把计数器初始化为1，\verb|\setcounter|\verb|{shuzi}{1}|
+由于有些地方用\latexinline|itemize|不太合适，也用不上\latexinline|\subsubsection|这样的小小节，所以就把它改成下面的样子了。但是在每次使用前得先把计数器初始化为1，\verb|\setcounter|\verb|{shuzi}{1}|
 \subsubsection{（题目(1)）}
 本章的主要内容与学校提供的Word模板中内容一致，图片与表格均采用原始设定大小，%
 主要是为了说明格式的统一。%

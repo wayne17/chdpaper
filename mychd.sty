@@ -29,26 +29,6 @@
   showstringspaces=false,breaklines=true,extendedchars=true,escapeinside=``,
   frame=shadowbox,rulesepcolor=\color{red!20!green!20!blue!20}}
 
-% minted 宏包配置
-\newtcblisting{mycode}[2]{breakable,drop shadow,listing engine=minted,minted style=trac,
-	minted language=#1,minted options={breaklines=true,fontsize=\small,linenos,
-		numbersep=3mm},
-	colback=blue!5!white,colframe=blue!75!black,listing only,
-	left=6mm,enhanced,title={#2},
-	colframe=blue!50!black,colback=blue!10!white,colbacktitle=blue!5!yellow!10!white,
-	fonttitle=\bfseries,coltitle=black,attach boxed title to top center=
-	{yshift=-0.25mm-\tcboxedtitleheight/2,yshifttext=2mm-\tcboxedtitleheight/2},
-	boxed title style={enhanced,boxrule=0.5mm,
-		frame code={ \path[tcb fill frame] ([xshift=-4mm]frame.west)
-			-- (frame.north west) -- (frame.north east) -- ([xshift=4mm]frame.east)
-			-- (frame.south east) -- (frame.south west) -- cycle; },
-		interior code={ \path[tcb fill interior] ([xshift=-2mm]interior.west)
-			-- (interior.north west) -- (interior.north east)
-			-- ([xshift=2mm]interior.east) -- (interior.south east) -- (interior.south west)
-			-- cycle;} },
-	overlay={\begin{tcbclipinterior}\fill[red!20!blue!20!white] (frame.south west)
-			rectangle ([xshift=5mm]frame.north west);\end{tcbclipinterior}}}
-
 % 配置算法包
 \algsetup{indent=3em}
 \floatname{algorithm}{算法}
@@ -155,7 +135,7 @@
 %定义名言引用
 \newcommand\zuozhe[1]{\begin{flushright}\pozhehao{\hei #1}\end{flushright}}
 \newcommand\mingyan[2]{\hspace{2em}\begin{minipage}[t]{0.8\textwidth}#1\vspace{0.1ex}\zuozhe{#2}\end{minipage}\vspace{3mm}}
-% 
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%任务书加边框%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\myoverlay}{\tikz[remember picture,overlay]{%
 \draw[black]
@@ -169,4 +149,32 @@ rectangle
 %自定义颜色
 \definecolor{myellow}{RGB}{149,106,28}
 \definecolor{mblue}{RGB}{1,9,72}
+
+% minted 宏包配置
+%% 重新定义行号
+\renewcommand{\theFancyVerbLine}{\sffamily
+\textcolor[rgb]{0.5,0.5,1.0}{\scriptsize
+\oldstylenums {\arabic{FancyVerbLine}}}}
+
+\usemintedstyle{algol}
+\setminted{breaklines, breakafter=o}
+\newmintinline{latex}{breaklines}
+\newtcblisting{mycode}[2]{breakable,drop shadow,listing engine=minted,minted style=algol,
+	minted language=#1,minted options={breaklines=true,fontsize=\small,linenos,
+		numbersep=3mm},
+	listing only,
+	left=6mm,enhanced,title={#2},
+	colframe=blue!50!black,colback=blue!10!white,colbacktitle=blue!5!yellow!10!white,
+	fonttitle=\bfseries,coltitle=black,attach boxed title to top center=
+	{yshift=-0.25mm-\tcboxedtitleheight/2,yshifttext=2mm-\tcboxedtitleheight/2},
+	boxed title style={enhanced,boxrule=0.5mm,
+		frame code={ \path[tcb fill frame] ([xshift=-4mm]frame.west)
+			-- (frame.north west) -- (frame.north east) -- ([xshift=4mm]frame.east)
+			-- (frame.south east) -- (frame.south west) -- cycle; },
+		interior code={ \path[tcb fill interior] ([xshift=-2mm]interior.west)
+			-- (interior.north west) -- (interior.north east)
+			-- ([xshift=2mm]interior.east) -- (interior.south east) -- (interior.south west)
+			-- cycle;} },
+	overlay={\begin{tcbclipinterior}\fill[red!20!blue!20!white] (frame.south west)
+			rectangle ([xshift=5mm]frame.north west);\end{tcbclipinterior}}}
 \endinput
