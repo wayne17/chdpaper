@@ -1,0 +1,21 @@
+package win7.xiao;
+
+public class duotai {
+
+  public static void main(String[] args) {
+    // TODO Auto-generated method stub
+    /*Cat cat=new Cat();
+      cat.cry();
+      Dog dog=new Dog();*/
+
+    /*Animal an=new Cat();
+      an.cry();
+      an=new Dog();
+      an.cry();*/
+
+    Master master=new Master();
+    master.feed(new Dog(), new Bone());
+    master.feed(new Cat(), new Fish());
+      }
+
+  }
