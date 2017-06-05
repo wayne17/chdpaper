@@ -200,6 +200,7 @@
 \renewcommand\figurename{图}
 \renewcommand\tablename{表}
 \renewcommand\appendixname{附录}
+
 \def\CJK@today{\zhdigits{\the\year}~年~\zhdigits{\the\month}~月}
 \def\en@today{\zhtoday}
 \def\CJK@year{\zhdigits{\the\year}}
@@ -238,8 +239,8 @@
     \pagestyle{plain}}
 \renewcommand\backmatter{%
     \if@openright\cleardoublepage\else\clearpage\fi
-    \titleformat{\chapter}{\filcenter \heiti\sffamily \sanhao}{附录\,\thechapter\,}{1em}{}
-    \titlecontents{chapter}[0pt]{\vspace{0.25\baselineskip} \songti  \xiaosi[1.25]}
+    \titleformat{\chapter}{\filcenter \heiti\sffamily \sanhao}{附录\,\arabic{chapter}\,}{1em}{}
+    \titlecontents{chapter}[0pt]{\vspace{0.25\baselineskip} \songti  \wuhao[1.25]}
       {附录\,\thecontentslabel\quad}{}
       {\hspace{.5em}\titlerule*[10pt]{$\cdot$}\contentspage}
     \@mainmattertrue\isbbacktrue
@@ -247,7 +248,7 @@
 \newcommand\bbackmatter{%
     \if@openright\cleardoublepage\else\clearpage\fi
     \titleformat{\chapter}{\filcenter \sffamily\heiti \sanhao}{附件\,\thechapter\,}{1em}{}
-    \titlecontents{chapter}[0pt]{\vspace{0.25\baselineskip} \songti  \xiaosi[1.25]}
+    \titlecontents{chapter}[0pt]{\vspace{0.25\baselineskip} \songti  \wuhao[1.25]}
       {附件\,\thecontentslabel\quad}{}
       {\hspace{.5em}\titlerule*[10pt]{$\cdot$}\contentspage}
     \@mainmatterfalse\isbbacktrue
@@ -265,16 +266,16 @@
 \titlecontents{chapter}[0pt]{\vspace{0.25\baselineskip} \songti \xiaosi[1.25]}
     {第\zhdigits{\thecontentslabel}章\quad}{}
     {\hspace{.5em}\titlerule*[10pt]{$\cdot$}\contentspage}
-\titlecontents{section}[2em]{\songti \xiaosi[1.25]}
+\titlecontents{section}[2em]{\songti \wuhao[1.25]}
     {\thecontentslabel\quad}{}
     {\hspace{.5em}\titlerule*[10pt]{$\cdot$}\contentspage}
-\titlecontents{subsection}[4em]{\songti \xiaosi[1.25]}
+\titlecontents{subsection}[4em]{\songti \wuhao[1.25]}
     {\thecontentslabel\quad}{}
     {\hspace{.5em}\titlerule*[10pt]{$\cdot$}\contentspage}
-\titlecontents{figure}[0pt]{\songti \xiaosi[1.25]}
+\titlecontents{figure}[0pt]{\songti \wuhao[1.25]}
     {\makebox[3.5em][l]{图~\thecontentslabel\quad}}{}
     {\hspace{.5em}\titlerule*[10pt]{$\cdot$}\contentspage}
-\titlecontents{table}[0pt]{\songti \xiaosi[1.25]}
+\titlecontents{table}[0pt]{\songti \wuhao[1.25]}
     {\makebox[3.5em][l]{表~\thecontentslabel\quad}}{}
     {\hspace{.5em}\titlerule*[10pt]{$\cdot$}\contentspage}
 \renewcommand\chapter{\if@openright\cleardoublepage\else\clearpage\fi
@@ -352,7 +353,7 @@
 \titlespacing{\subsection}{0em}{2ex \@plus 2bp \@minus 2bp}{2ex \@plus 2bp \@minus 2bp}
 \titlespacing{\subsubsection}{0em}{1ex \@plus 2bp \@minus 2bp}{0ex \@plus 2bp \@minus 2bp}
 \renewcommand\normalsize{%
-\@setfontsize\normalsize{12bp}{16bp}%正文1.25倍行距
+\@setfontsize\normalsize{10.5bp}{13.125bp}%正文1.25倍行距
 \renewcommand{\baselinestretch}{1.25}%
 \setlength\abovedisplayskip{10bp \@plus 1bp \@minus 1bp}%
 \setlength\abovedisplayshortskip{10bp \@plus 1bp \@minus 1bp}%
@@ -413,6 +414,11 @@
 \captionsetup[figure]{position=bottom,belowskip=-3bp \@plus 2bp \@minus 2bp,aboveskip=6bp \@plus 2bp \@minus 2bp}%
 \captionsetup[subfloat]
 {labelformat=simple,font=thu,captionskip=6bp,nearskip=6bp,farskip=0bp,topadjust=0bp}
+
+\renewcommand{\theequation}{\thechapter-\arabic{equation}}
+\renewcommand{\thefigure}{\thechapter-\arabic{figure}}
+\renewcommand{\thetable}{\thechapter-\arabic{table}}
+
 \renewcommand{\thesubfigure}{(\alph{subfigure})}
 \renewcommand{\thesubtable}{(\alph{subtable})}
 \let\thu@LT@array\LT@array
