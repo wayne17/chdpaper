@@ -217,10 +217,10 @@
 \fancyhead[L]{\if@mainmatter\sanhao\ziju{6bp}\chdname 长安大学\else\@empty\fi} % 在页眉左侧显示毛笔字校名
 \fancyhead[R]{\if@mainmatter\xiaowu\@title\else\@empty\fi} 
 % 设置页脚 （foot）
-\fancyfoot[C]{\ifisbback\xiaowu 第~\thepage~页\hspace*{9bp}共~\lastpageref{LastPage}~页\else\xiaowu \thepage \fi}
+\fancyfoot[R]{\ifisbback\xiaowu 共~\lastpageref{LastPage}~页\hspace*{9bp}第~\thepage~页\else\xiaowu \thepage \fi}
 %解决在frontmatter与其它部分页脚不同的问题以及bbackmatter与其它部分页眉不同的问题
 \if@mainmatter\renewcommand{\headrulewidth}{1.0pt}\else\renewcommand{\headrulewidth}{0pt}\fi % 页眉与正文之间的水平线粗细
-\renewcommand{\footrulewidth}{0pt}% 取消页脚与正文之间的水平线粗细
+\renewcommand{\footrulewidth}{1.0pt}% 取消页脚与正文之间的水平线粗细
 }
 \renewcommand\frontmatter{%
     \if@openright\cleardoublepage\else\clearpage\fi
