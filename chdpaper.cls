@@ -305,6 +305,23 @@
     \@afterheading
   \fi
 }
+%附录中的摘要环境
+\newcommand\abstractnamec{摘~要}
+\newcommand\abstractnamee{ABSTRACT}
+
+
+\newenvironment{abstractc}{%
+\markboth{摘~要}{摘~要}
+    \noindent\textbf{\abstractnamec{:}}
+    \xiaosi
+    \@afterheading}
+    {\par\vspace{1ex}\par}
+\newenvironment{abstracte}{%
+    \noindent\textbf{\abstractnamee{:}}
+    \xiaosi
+    \@afterheading}
+    {\par\vspace{1ex}\par}
+ %正文中的摘要环境 
 \newcommand\cabstractname{摘~要}
 \newcommand\eabstractname{ABSTRACT}
 \newcommand\ckeywordsname{\noindent{关键词}}
