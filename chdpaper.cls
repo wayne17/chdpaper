@@ -702,13 +702,13 @@
 \newpage
 %\renewcommand{\CJKglue}{\hskip 1.6pt plus 0.08\baselineskip} % 加大字间距，使正文每行33~34个字
 
-  \normalsize % normal, 正文开始
-  \def\@tabular{\wuhao[1.25]\old@tabular} % 之后表格字体使用5号黑体
   \cleardoublepage%
   \newpage
   \thispagestyle{empty}
 
 } % QED
+\normalsize % normal, 正文开始
+  \def\@tabular{\wuhao[1.25]\old@tabular} % 之后表格字体使用5号黑体
 \endinput
 %%
 %% End of file `chdpaper.cls'.
